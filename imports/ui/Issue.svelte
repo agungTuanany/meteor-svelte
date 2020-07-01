@@ -16,16 +16,9 @@
 <li>{priority}</li>
 -->
 
-<li>
-    {issue.title}
-</li>
-<li>
-    {issue.description}
-</li>
-
-<li>
-    {issue.dueDate}
-</li>
-<li>
-    {issue.priority}
-</li>
+<tr>
+    <td>{issue.title}       </td>
+    <td>{issue.description} </td>
+    <td>{issue.dueDate}     </td>
+    <td>{issue.priority}    </td>
+</tr>

@@ -76,23 +76,26 @@ function handleSubmit(event) {
             <input type="submit"/>
         </form>
     </header>
-    {#each $issues as issue}
-        <!--
-            <ul>
-            <Issue title={ issue.title }
-            description={ issue.description }
-            dueDate={ issue.dueDate }
-            priority={ issue.priority }
-            />
-            </ul>
-        -->
-
-        <ul>
-            <Issue
-                issue={ issue }
+    <div>
+            <!--
+                <ul>
+                <Issue title={ issue.title }
+                description={ issue.description }
+                dueDate={ issue.dueDate }
+                priority={ issue.priority }
                 />
-
-        </ul>
-
-    {/each}
+                </ul>
+            -->
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                </tr>
+        {#each $issues as issue}
+                <Issue issue={issue}/>
+        {/each}
+            </table>
+    </div>
 </div>
