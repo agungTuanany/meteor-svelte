@@ -1,4 +1,4 @@
-
+<!-- Implement Svelte Component -->
 <script>
     import Issue from './Issue.svelte'
 
@@ -32,13 +32,22 @@ function getIssues() {
         </h1>
     </header>
     {#each getIssues() as issue}
+        <!--
         <ul>
-            <Issue
-                title={ issue.title }
+            <Issue title={ issue.title }
                 description={ issue.description }
                 dueDate={ issue.dueDate }
                 priority={ issue.priority }
-                />
+            />
         </ul>
+        -->
+
+        <ul>
+            <Issue
+                issue={ issue }
+            />
+
+        </ul>
+
     {/each}
 </div>
