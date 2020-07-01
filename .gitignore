@@ -1,0 +1,27 @@
+# JSON
+node_modules/
+package-lock.json
+
+# Meteor related
+
+.meteor/local
+.meteor/.finished-upgraders
+#.meteor/.gitignore
+.meteor/.id
+.meteor/platforms
+packages/
+private/
+meteorpress.json
+setting.json
+smart.lock
+
+
+
+
+
+
+
+
+# Miscellaneous
+note*.*
+todo.txt
