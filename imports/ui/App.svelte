@@ -1,7 +1,12 @@
 <!-- Implement Svelte Component -->
 <script>
+    import { useTracker } from 'meteor/rdb:svelte-meteor-data'
+    import { Issues } from "../api/issues.js"
     import Issue from './Issue.svelte'
 
+    // Reactive Svelte component
+    $: issues = useTracker(() => Issues.find({}).fetch())
+/*
 function getIssues() {
     return [
         // Dummy object
@@ -22,6 +27,8 @@ function getIssues() {
         },
     ]
 }
+*/
+
 </script>
 
 
@@ -31,7 +38,7 @@ function getIssues() {
             Issues:
         </h1>
     </header>
-    {#each getIssues() as issue}
+    {#each $issues as issue}
         <!--
         <ul>
             <Issue title={ issue.title }
