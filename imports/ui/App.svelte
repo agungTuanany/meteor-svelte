@@ -1,8 +1,9 @@
 <!-- Implement Svelte Component -->
 <script>
-    import { useTracker } from 'meteor/rdb:svelte-meteor-data';
-    import { Issues } from "../api/issues.js"
-    import Issue from './Issue.svelte'
+    import { useTracker }    from 'meteor/rdb:svelte-meteor-data';
+    import { BlazeTemplate } from "meteor/svelte:blaze-integration"
+    import { Issues }        from "../api/issues.js"
+    import Issue             from './Issue.svelte'
 
     // Reactive Svelte component
     $: issues = useTracker(() => Issues.find({}).fetch())
@@ -59,7 +60,16 @@ function handleSubmit(event) {
 
 <div>
     <header>
+        <nav>
+            <a href="#" class="brand">Meteor & Svelte Issue App</a>
+            <div class="menu">
+                <BlazeTemplate template="loginButtons" data={{align: 'right'}} />
+            </div>
+        </nav>
+
         <h1>Issues:</h1>
+
+
         <form on:submit|preventDefault={handleSubmit}>
             <label for="title">Title</label>
             <input id="title" type="text" bind:value={newIssue.title}/>
