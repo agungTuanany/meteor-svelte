@@ -1,24 +1,12 @@
 <script>
-    /*
-    export let title
-    export let description
-    export let dueDate
-    export let priority
-    */
     import { Issues } from "../api/issues.js"
     export let issue
 
-function deleteIssue() {
-    Issues.remove(issue._id)
-}
+    function deleteIssue() {
+        Issues.remove(issue._id)
+    }
 </script>
 
-<!--
-<li>{title}</li>
-<li>{description}</li>
-<li>{dueDate}</li>
-<li>{priority}</li>
--->
 
 <tr>
     <td>{issue.title}       </td>
