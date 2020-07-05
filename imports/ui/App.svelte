@@ -118,7 +118,10 @@ function handleSubmit(event) {
                     <th>Description</th>
                     <th>Due Date</th>
                     <th>Priority</th>
+                    <th>Username</th>
+                    {#if $currentUser}
                     <th></th>
+                    {/if}
                 </tr>
         {#each $issues as issue}
                 <Issue issue={issue}/>
